@@ -1,8 +1,8 @@
-"use client";
+"use client"
+
 import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-
 
 export const Register = () => {
   const [username, setUsername] = useState("");
@@ -16,75 +16,74 @@ export const Register = () => {
 
   return (
     <div>
-        <section>
-            <div className="flex items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: 'url("/images/bg-login.png")' }}>
-              <div className="flex justify-center items-center min-h-screen">
-                <div className="w-[500px] h-auto items-center bg-neutral-900 rounded-lg p-4 text-white">
-                  <div className="text-center py-10">
-                      <h1 className="text-2xl font-bold">Welcome</h1>
-                      <p className="">Please Register to create account</p>
+      <section>
+        <div className="flex items-center justify-center min-h-screen bg-cover bg-center overflow-hidden" style={{ backgroundImage: 'url("/images/bg-login.png")' }}>
+          <div className="mx-auto w-full md:max-w-md sm:w-full md:h-auto items-center bg-neutral-900 rounded-lg p-4 text-white">
+            <div className="text-center py-8">
+              <h1 className="text-2xl font-bold">Welcome</h1>
+              <p className="">Please Register to create an account</p>
+            </div>
+            <form className="mt-5">
+              <div className="mb-4">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="user@mail.com"
+                  className="bg-neutral-800 border-none shadow appearance-none border rounded w-full p-3 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-bold mb-2" htmlFor="username">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="user@mail.com"
+                  className="bg-neutral-800 border-none shadow appearance-none border rounded w-full p-3 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              <div className="mb-4 relative">
+                <label className="block text-sm font-bold mb-2" htmlFor="password">
+                  Password
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    className="bg-neutral-800 border-none  shadow appearance-none border rounded w-full p-3 leading-tight focus:outline-none focus:shadow-outline"
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+                    {showPassword ? <FaEyeSlash onClick={handleTogglePassword} className="cursor-pointer" /> : <FaEye onClick={handleTogglePassword} className="cursor-pointer" />}
                   </div>
-                  <form className="mt-5">
-                      <div className="mb-4">
-                          <label className="block text-sm font-bold mb-2" htmlFor="username">
-                              Username
-                          </label>
-                          <input 
-                              type="text" 
-                              id="username"
-                              name="username" 
-                              placeholder="user@mail.com" 
-                              className="bg-neutral-800 border-none shadow appearance-none border rounded w-full p-3  leading-tight focus:outline-none focus:shadow-outline" 
-                          />
-                      </div>
-                      <div className="mb-4">
-                          <label className="block text-sm font-bold mb-2" htmlFor="username">
-                              Email
-                          </label>
-                          <input 
-                              type="email" 
-                              id="email" 
-                              name="email"
-                              placeholder="user@mail.com" 
-                              className="bg-neutral-800 border-none shadow appearance-none border rounded w-full p-3  leading-tight focus:outline-none focus:shadow-outline" 
-                          />
-                      </div>
-                      <div className="mb-4 relative">
-                          <label className="block text-sm font-bold mb-2" htmlFor="password">
-                              Password
-                          </label>
-                          <div className="relative">
-                            <input 
-                                type={showPassword ? 'text' : 'password'}
-                                id="password"
-                                name="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Password" 
-                                className="bg-neutral-800 border-none  shadow appearance-none border rounded w-full p-3 leading-tight focus:outline-none focus:shadow-outline" 
-                            />
-                             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                                {showPassword ? <FaEyeSlash onClick={handleTogglePassword} className="cursor-pointer" /> : <FaEye onClick={handleTogglePassword} className="cursor-pointer" />}
-                             </div>
-                          </div>
-                      </div>
-                      <div className="flex justify-center py-5">
-                          <button 
-                              type="submit" 
-                              className="btn btn-primary w-full text-white">
-                              Register
-                          </button>
-                      </div>
-                      <div className="mt-3 py-7">
-                        <h5 className="text-sm text-center">
-                                already have an account? <Link href="/login" className="text-primary">Login</Link>
-                        </h5>
-                      </div>
-                  </form>
                 </div>
               </div>
-            </div>
-        </section>
+              <div className="flex justify-center py-4">
+                <button
+                  type="submit"
+                  className="btn btn-primary w-full text-white p-3">
+                  Register
+                </button>
+              </div>
+              <div className="mt-3 py-4 text-center">
+                <h5 className="text-sm">
+                  Already have an account?{' '}
+                  <Link href="/login" className="text-primary">Login</Link>
+                </h5>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
-  )
-}
+  );
+};
