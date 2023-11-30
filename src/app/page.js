@@ -1,13 +1,13 @@
-import { Hero } from "./components/Hero";
-import { Navbar } from "./components/Navbar";
-import { Events } from "./components/Events";
-import { Login } from "./components/Login";
+import { Events } from "@/components/Events";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+
 
 export default function Page() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero/>
       <Events />
       {/* <Login /> */}
     </>

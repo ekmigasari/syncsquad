@@ -58,7 +58,7 @@ export const Navbar = () => {
             isLoggedIn ?
                 <Link href="/login">
                     <span 
-                    onClick={handleLogin}
+                    // onClick={handleLogin}
                     className="border border-indigo-600 text-indigo-500 border-solid outline-none focus:border-blue-500 px-4 py-2 rounded-lg hover:bg-indigo-500 hover:text-white">
                         Login
                     </span>
