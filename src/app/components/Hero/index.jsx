@@ -12,7 +12,7 @@ export const Hero = () => {
     <div>
         <div className="">
             <Image className="sm:w-full md:w-2/3 lg:w-full xl:w-full min-h-screen object-cover" 
-                src="/images/backgroud-hero.png" 
+                src="/images/background-hero.png" 
                 alt="Tailwind CSS Hero component" 
                 width={1920}
                 height={1080}
@@ -23,7 +23,7 @@ export const Hero = () => {
                 <Button
                     label={"Create Event"}
                     onClick={handleEvent}
-                    btnColor={"btn btn-warning mt-5 w-[196px]"}
+                    btnColor={"btn btn-primary text-white mt-5 w-[196px]"}
                 />
             </div>
         </div>

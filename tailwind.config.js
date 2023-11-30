@@ -11,7 +11,6 @@ module.exports = {
 
   daisyui: {
     themes: [
-      "bumblebee",
       "dark"
     ],
   },
