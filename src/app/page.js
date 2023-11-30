@@ -1,6 +1,7 @@
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Events } from "./components/Events";
+import { Login } from "./components/Login";
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <Events />
+      {/* <Login /> */}
     </>
   );
 }
