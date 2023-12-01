@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "next": "14.0.3",
     "next-app": "^0.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
-    "daisyui": "^4.4.11",
+    "daisyui": "^4.4.14",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
   }
