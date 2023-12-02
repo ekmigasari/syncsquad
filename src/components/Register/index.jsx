@@ -1,10 +1,13 @@
 "use client";
 
+import { API_URL } from "@/config/apiUrl";
 import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 export const Register = () => {
+  const [loading, setLoading] = useState(false);
   const [registerData, setRegisterData] = useState({
     name: "",
     email: "",
@@ -19,16 +22,35 @@ export const Register = () => {
     setShowPassword(!showPassword);
   };
 
-  console.log(registerData)
-
   function handleChange(e) {
     const { name, value } = e.target;
     setRegisterData({ ...registerData, [name]: value });
   }
 
-  function handleSubmitRegister() {
+  async function handleSubmitRegister() {
+    // console.log(registerData);
+    // console.log(API_URL);
+    setLoading(true);
+    const { name, email, password } = registerData;
+    const res = await fetch(`${API_URL}/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+    const data = await res.json();
 
+    if (!data) {
+      setLoading(false);
+      toast.error("Error registring!");
+      return;
+    }
+
+    setLoading(false);
+    toast.success("User registered, please login...");
   }
+
   return (
     <div>
       <section>
@@ -43,17 +65,14 @@ export const Register = () => {
             </div>
             <form className="mt-5">
               <div className="mb-4">
-                <label
-                  className="block text-sm font-bold mb-2"
-                  htmlFor="username"
-                >
-                  Username
+                <label className="block text-sm font-bold mb-2" htmlFor="name">
+                  Name
                 </label>
                 <input
                   type="text"
-                  id="username"
-                  name="username"
-                  placeholder="username"
+                  id="name"
+                  name="name"
+                  placeholder="name"
                   className="bg-neutral-800 border-none shadow appearance-none border rounded w-full p-3 leading-tight focus:outline-none focus:shadow-outline"
                   onChange={handleChange}
                 />
@@ -109,6 +128,7 @@ export const Register = () => {
                 <button
                   type="submit"
                   className="btn btn-primary w-full text-white p-3"
+                  onClick={handleSubmitRegister}
                 >
                   Register
                 </button>
