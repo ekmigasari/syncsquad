@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { useRouter } from "next/router";
 
 export const Register = () => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [registerData, setRegisterData] = useState({
     name: "",
@@ -49,6 +51,7 @@ export const Register = () => {
 
     setLoading(false);
     toast.success("User registered, please login...");
+    setTimeout(() => router.push("/login"), 2000);
   }
 
   return (
