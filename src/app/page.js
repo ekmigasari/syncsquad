@@ -1,15 +1,14 @@
 import { Events } from "@/components/Events";
 import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
+// import { Navbar } from "@/components/Navbar";
 
 
 export default function Page() {
   return (
-    <>
-      <Navbar />
-      <Hero/>
+    <div className="h-screen flex flex-col">
+      {/* <Navbar /> */}
+        <Hero/>
       <Events />
-      {/* <Login /> */}
-    </>
+    </div>
   );
 }

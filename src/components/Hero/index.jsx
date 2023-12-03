@@ -11,7 +11,7 @@ export const Hero = () => {
   return (
     <div>
         <div className="">
-            <Image className="sm:w-full md:w-2/3 lg:w-full xl:w-full min-h-screen object-cover" 
+            <Image className="sm:w-full md:w-full lg:w-full xl:w-full min-h-screen object-cover" 
                 src="/images/background-hero.png" 
                 alt="Tailwind CSS Hero component" 
                 width={1920}
