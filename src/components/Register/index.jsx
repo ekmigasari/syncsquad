@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useRouter } from "next/router";
+import toast from "react-hot-toast";
 
 export const Register = () => {
   const router = useRouter();
@@ -132,6 +133,7 @@ export const Register = () => {
                   type="submit"
                   className="btn btn-primary w-full text-white p-3"
                   onClick={handleSubmitRegister}
+                  disabled={loading}
                 >
                   Register
                 </button>
