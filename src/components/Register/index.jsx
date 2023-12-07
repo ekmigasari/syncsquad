@@ -5,8 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { useRouter } from "next/router";
-import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export const Register = () => {
   const router = useRouter();

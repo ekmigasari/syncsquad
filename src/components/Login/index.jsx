@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 import { API_URL } from "@/config/apiUrl";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export const Login = () => {
   const router = useRouter();
