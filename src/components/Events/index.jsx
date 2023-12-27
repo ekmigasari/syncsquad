@@ -4,7 +4,7 @@ import { Card } from '../Card'
 export const Events = () => {
   return (
     <>
-        <div className="container mx-auto p-4">
+        <div className="container mx-auto p-4 mb-24">
             <div className="text-center py-10">
                 <h1 className="text-2xl font-bold text-white">POPULAR EVENTS</h1>
             </div>
